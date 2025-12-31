@@ -1,0 +1,137 @@
+/* ========================================
+   APP LAYOUT
+   ======================================== */
+.app-layout {
+  min-height: 100vh;
+}
+
+.main-content {
+  min-height: 100vh;
+}
+
+/* ========================================
+   HOME THEME TOGGLE
+   ======================================== */
+.home-theme-toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  z-index: 1000;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.home-theme-toggle:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+  box-shadow: var(--shadow-md);
+  transform: scale(1.05);
+}
+
+.home-theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   MOBILE MENU BUTTON
+   ======================================== */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 100;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 1px;
+  transition: var(--transition);
+}
+
+.mobile-menu-btn:hover {
+  border-color: var(--coral);
+  box-shadow: var(--shadow-md);
+}
+
+.mobile-menu-btn:hover span {
+  background: var(--coral);
+}
+
+@media (max-width: 1024px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+/* ========================================
+   SIDEBAR SHOW BUTTON (when hidden)
+   ======================================== */
+.sidebar-show-btn {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-show-btn:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+  box-shadow: var(--shadow-md);
+}
+
+/* Adjust page content when sidebar is hidden */
+.sidebar-hidden .page {
+  padding-left: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .home-theme-toggle {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+}

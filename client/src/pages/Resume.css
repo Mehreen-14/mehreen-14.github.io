@@ -1,0 +1,473 @@
+/* ========================================
+   RESUME PAGE STYLES
+   ======================================== */
+
+.resume-download-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.resume-preview-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.resume-preview-icon {
+  color: var(--coral);
+  opacity: 0.8;
+}
+
+.resume-preview-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.resume-preview-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.file-type {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.resume-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.resume-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.resume-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--lavender-deep);
+  display: inline-block;
+}
+
+.resume-item {
+  margin-bottom: 1rem;
+}
+
+.resume-item:last-child {
+  margin-bottom: 0;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.resume-item-header strong {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.resume-item-header span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.resume-item-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.resume-list {
+  margin: 0.5rem 0 0 1.25rem;
+  padding: 0;
+}
+
+.resume-list li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.resume-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resume-skill-row {
+  font-size: 0.85rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.resume-skill-row strong {
+  color: var(--text-primary);
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.resume-skill-row span {
+  color: var(--text-secondary);
+}
+
+.resume-project-item {
+  padding: 0.75rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.resume-project-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0.25rem 0;
+}
+
+.resume-project-tech {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.resume-award-position {
+  font-size: 0.85rem;
+  color: var(--lavender-deep);
+  font-weight: 600;
+  margin: 0;
+}
+
+.resume-leadership-role {
+  font-size: 0.85rem;
+  color: var(--sky-deep);
+  font-weight: 600;
+  margin: 0;
+}
+
+.resume-pub-authors {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0.25rem 0;
+}
+
+.resume-pub-venue {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Print Header - Hidden on screen */
+.print-header {
+  display: none;
+}
+
+/* PDF Header - hidden on screen, visible in PDF export */
+.pdf-header {
+  display: none;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #000;
+  background: white;
+}
+
+.pdf-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #000;
+}
+
+.pdf-contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #000;
+}
+
+/* Screen only elements */
+.screen-only {
+  display: block;
+}
+
+/* ========================================
+   PDF EXPORT STYLES (applied via html2pdf)
+   ======================================== */
+.resume-content {
+  display: none;
+  background: white;
+}
+
+.resume-content .resume-section-title {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.resume-content .resume-item-header strong {
+  color: #000;
+}
+
+.resume-content .resume-item-header span {
+  color: #000;
+}
+
+.resume-content .resume-item-sub {
+  color: #000;
+}
+
+.resume-content .resume-item-sub strong {
+  color: #000;
+}
+
+.resume-content .resume-list li {
+  color: #000;
+}
+
+.resume-content .resume-skill-row strong {
+  color: #000;
+}
+
+.resume-content .resume-skill-row span {
+  color: #000;
+}
+
+.resume-content .resume-project-desc {
+  color: #000;
+}
+
+.resume-content .resume-project-tech {
+  color: #000;
+}
+
+.resume-content .resume-project-tech strong {
+  color: #000;
+}
+
+.resume-content .resume-award-position {
+  color: #000;
+}
+
+.resume-content .resume-pub-authors {
+  color: #000;
+}
+
+.resume-content .resume-pub-venue {
+  color: #000;
+}
+
+.resume-content p {
+  color: #000;
+}
+
+.resume-content strong {
+  color: #000;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  /* Hide screen-only elements */
+  .screen-only,
+  .sidebar,
+  .page-header,
+  .resume-actions {
+    display: none !important;
+  }
+
+  /* Show print header */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #000;
+  }
+
+  .print-header h1 {
+    font-size: 24pt;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #000;
+  }
+
+  .print-contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 10pt;
+    color: #000;
+  }
+
+  /* Show PDF header in print */
+  .pdf-header {
+    display: block !important;
+    background: white !important;
+  }
+
+  .pdf-header h1 {
+    font-size: 24pt !important;
+    color: #000 !important;
+  }
+
+  .pdf-contact {
+    font-size: 10pt !important;
+    color: #000 !important;
+  }
+
+  /* Page setup */
+  .page {
+    padding: 0 !important;
+    padding-left: 0 !important;
+    background: white !important;
+    min-height: auto !important;
+  }
+
+  .page-inner,
+  .resume-page {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.5in !important;
+    background: white !important;
+  }
+
+  /* Show and style resume content for print */
+  .resume-content {
+    display: block !important;
+  }
+  
+  /* Force all text to black */
+  .resume-content,
+  .resume-content * {
+    color: #000 !important;
+    background: white !important;
+  }
+
+  /* Section styling for print */
+  .resume-section {
+    margin-bottom: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    border-bottom: 1px solid #ccc !important;
+    page-break-inside: avoid;
+  }
+
+  .resume-section-title {
+    font-size: 11pt !important;
+    color: #000 !important;
+    border-bottom-color: #000 !important;
+  }
+
+  .resume-item {
+    margin-bottom: 0.5rem !important;
+    page-break-inside: avoid;
+  }
+
+  .resume-item-header strong {
+    font-size: 10pt !important;
+    color: #000 !important;
+  }
+
+  .resume-item-header span,
+  .resume-item-sub,
+  .resume-list li,
+  .resume-skill-row,
+  .resume-skill-row strong,
+  .resume-skill-row span,
+  .resume-project-desc,
+  .resume-project-tech,
+  .resume-pub-authors,
+  .resume-pub-venue,
+  .resume-award-position {
+    font-size: 9pt !important;
+    color: #000 !important;
+  }
+
+  .resume-project-item {
+    background: white !important;
+    border-color: #ccc !important;
+    padding: 0.5rem !important;
+  }
+
+  /* Remove backgrounds and shadows */
+  * {
+    box-shadow: none !important;
+  }
+
+  /* Ensure proper page breaks */
+  .resume-section {
+    page-break-inside: avoid;
+  }
+
+  /* A4 size optimization */
+  @page {
+    size: A4;
+    margin: 0.5in;
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .resume-item-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .resume-item-sub {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .resume-skill-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .resume-skill-row strong {
+    min-width: auto;
+  }
+}
+

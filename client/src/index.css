@@ -1,0 +1,157 @@
+/* ========================================
+   BASE STYLES & FONTS
+   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=Great+Vibes&display=swap');
+
+:root {
+  --coral: #E8847C;
+  --coral-deep: #D66B62;
+  --coral-glow: rgba(232, 132, 124, 0.15);
+  
+  --cream: #F9CB99;
+  --cream-deep: #E5B580;
+  --cream-glow: rgba(249, 203, 153, 0.15);
+  
+  --sky: #6A9EC4;
+  --sky-deep: #5588B0;
+  --sky-glow: rgba(106, 158, 196, 0.15);
+  
+  --lavender: #9A84B8;
+  --lavender-deep: #8570A0;
+  --lavender-glow: rgba(154, 132, 184, 0.15);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition: 0.15s ease;
+
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   DARK MODE
+   ======================================== */
+[data-theme="dark"] {
+  --bg-primary: #0A0A0B;
+  --bg-secondary: #121214;
+  --bg-card: #18181B;
+  --bg-elevated: #1F1F23;
+  --bg-glass: rgba(24, 24, 27, 0.8);
+  --text-primary: #FAFAFA;
+  --text-secondary: #C8C8D0;
+  --text-muted: #8A8A95;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.18);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --gradient-subtle: linear-gradient(135deg, rgba(232, 132, 124, 0.03) 0%, rgba(212, 196, 232, 0.03) 100%);
+}
+
+/* ========================================
+   LIGHT MODE (Professional)
+   ======================================== */
+[data-theme="light"] {
+  --bg-primary: #F5F5F4;
+  --bg-secondary: #FAFAF9;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #ECECEB;
+  --bg-glass: rgba(250, 250, 249, 0.95);
+  --text-primary: #1C1917;
+  --text-secondary: #44403C;
+  --text-muted: #78716C;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(0, 0, 0, 0.18);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+  --gradient-subtle: linear-gradient(135deg, rgba(232, 132, 124, 0.05) 0%, rgba(212, 196, 232, 0.05) 100%);
+  
+  /* Darker accent colors for light mode */
+  --coral: #D66B62;
+  --coral-deep: #C45A51;
+  --cream-deep: #C9985C;
+  --sky: #4A7FA8;
+  --sky-deep: #3D6B8F;
+  --lavender: #7A5FA0;
+  --lavender-deep: #6A4F8C;
+}
+
+/* ========================================
+   GLOBAL RESETS
+   ======================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hide scrollbar on homepage */
+body.home-page {
+  overflow: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   SELECTION
+   ======================================== */
+::selection {
+  background: var(--coral);
+  color: white;
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
