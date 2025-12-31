@@ -6,14 +6,14 @@ const experienceData = [
     company: "OPlusDojo",
     companyUrl: "https://www.oplusdojo.com/",
     role: "Software Engineer",
-    project: "Elora — Healthcare Resource Management System",
+    project: "AI-powered social services case management platform",
     period: "October 2025 – Present",
     color: "coral",
     icon: "code",
     highlights: [
-      "Full-stack healthcare platform with AI-powered needs assessment, voice transcription, and resource recommendation for Community Health Workers"
+      "Built a multi-tenant web application for social services case management featuring real-time session tracking, offline support, and AI-driven resource recommendations"
     ],
-    techStack: ["TypeScript", "React", "Python", "PostgreSQL", "AWS"]
+    techStack: ["TypeScript", "React", "Python", "PostgreSQL", "Pinecone", "AWS"]
   },
   {
     company: "Nifty Coders",
