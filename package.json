@@ -1,1 +1,6 @@
-
+{
+  "name": "portfolio-mine",
+  "version": "1.0.0",
+  "description": "Mehreen's Portfolio Website",
+  "private": true
+}
