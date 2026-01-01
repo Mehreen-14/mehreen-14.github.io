@@ -689,12 +689,19 @@
     height: auto;
     min-height: 100vh;
     padding-top: 4rem;
-    align-items: flex-start;
+    padding-bottom: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: visible;
+    overflow-y: auto;
   }
 
   .home-grid {
     grid-template-columns: 1fr;
     gap: 10px;
+    width: 100%;
+    flex-shrink: 0;
   }
 
   .education, .projects, .hero, .contact, .research, .experience, .leadership {
@@ -764,6 +771,17 @@
   padding: 1rem;
   background: linear-gradient(to top, var(--bg-primary) 60%, transparent);
   pointer-events: none;
+  z-index: 100;
+}
+
+@media (max-width: 640px) {
+  .home-footer {
+    position: relative;
+    margin-top: 2rem;
+    padding: 1.5rem 1rem;
+    background: transparent;
+    width: 100%;
+  }
 }
 
 .home-footer p {

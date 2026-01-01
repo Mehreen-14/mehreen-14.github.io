@@ -9,6 +9,19 @@
   min-height: 100vh;
 }
 
+@media (max-width: 640px) {
+  .app-layout.no-sidebar {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .app-layout.no-sidebar .main-content {
+    height: auto;
+    min-height: auto;
+  }
+}
+
 /* ========================================
    HOME THEME TOGGLE
    ======================================== */

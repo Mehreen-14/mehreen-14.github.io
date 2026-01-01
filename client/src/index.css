@@ -104,13 +104,26 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Hide scrollbar on homepage */
+/* Hide scrollbar on homepage - but allow on mobile */
 body.home-page {
   overflow: hidden;
 }
 
+@media (max-width: 640px) {
+  body.home-page {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+}
+
 #root {
   min-height: 100vh;
+}
+
+@media (max-width: 640px) {
+  #root {
+    height: auto;
+  }
 }
 
 a {
