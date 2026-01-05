@@ -1,9 +1,19 @@
 import { NavLink } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import './Sidebar.css'
 
-function CuteMascot() {
+const mascotMessages = {
+  '/': { text: "There's no place like home!", emoji: '🏠' },
+  '/education': { text: "Wanna see the education & skills? Click it! ", emoji: '📚' },
+  '/experience': { text: "Check out the professional journey! ", emoji: '💼' },
+  '/projects': { text: "See what I've built! ", emoji: '🚀' },
+  '/research': { text: "Discover the research work! ", emoji: '🔬' },
+  '/leadership': { text: "See the leadership roles! ", emoji: '👥' },
+  '/contact': { text: "Let's connect! Drop me a message! ", emoji: '💌' },
+}
+
+function CuteMascot({ hoveredPath }) {
   const [eyePosition, setEyePosition] = useState({ x: 0, y: 0 })
   const [isGreeting, setIsGreeting] = useState(true)
   const mascotRef = useRef(null)
@@ -28,7 +38,6 @@ function CuteMascot() {
       const deltaX = e.clientX - mascotCenterX
       const deltaY = e.clientY - mascotCenterY
       
-      // Limit eye movement
       const maxMove = 3
       const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY)
       const normalizedX = distance > 0 ? (deltaX / distance) * Math.min(distance / 50, 1) * maxMove : 0
@@ -44,16 +53,25 @@ function CuteMascot() {
     }
   }, [])
 
+  const currentMessage = hoveredPath ? mascotMessages[hoveredPath] : null
+  const showMessage = isGreeting || currentMessage
+
   return (
     <div className="cute-mascot rect-mascot" ref={mascotRef}>
-      <motion.div 
-        className="mascot-speech"
-        initial={{ opacity: 0, scale: 0, y: 10 }}
-        animate={{ opacity: isGreeting ? 1 : 0, scale: isGreeting ? 1 : 0, y: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        Hi! 👋
-      </motion.div>
+      <AnimatePresence mode="wait">
+        {showMessage && (
+          <motion.div 
+            className={`mascot-speech ${currentMessage ? 'mascot-speech--hover' : ''}`}
+            key={currentMessage ? hoveredPath : 'greeting'}
+            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 5 }}
+            transition={{ duration: 0.2, type: "spring", stiffness: 300 }}
+          >
+            {currentMessage ? currentMessage.text : "Hi! 👋"}
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       <div className="rect-shapes-container">
         {shapes.map((shape) => (
@@ -155,6 +173,8 @@ const navItems = [
 ]
 
 function Sidebar({ isOpen, onClose, onHide, theme, toggleTheme }) {
+  const [hoveredPath, setHoveredPath] = useState(null)
+
   return (
     <>
       {isOpen && (
@@ -187,6 +207,8 @@ function Sidebar({ isOpen, onClose, onHide, theme, toggleTheme }) {
               to={item.path}
               className={({ isActive }) => `nav-link ${isActive ? 'active' : ''} ${item.color || ''}`}
               onClick={onClose}
+              onMouseEnter={() => setHoveredPath(item.path)}
+              onMouseLeave={() => setHoveredPath(null)}
               end={item.path === '/'}
             >
               <span className="nav-icon">{item.icon}</span>
@@ -196,7 +218,7 @@ function Sidebar({ isOpen, onClose, onHide, theme, toggleTheme }) {
         </nav>
 
         <div className="sidebar-footer">
-          <CuteMascot />
+          <CuteMascot hoveredPath={hoveredPath} />
           <div className="sidebar-footer-buttons">
             <a 
               href="/resume/mtm_resume.pdf" 
