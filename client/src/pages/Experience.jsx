@@ -11,7 +11,7 @@ const experienceData = [
     color: "coral",
     icon: "code",
     highlights: [
-      "Built a multi-tenant web application for social services case management featuring real-time session tracking, offline support, and AI-driven resource recommendations"
+      "Built a multi-tenant web application for social services"
     ],
     techStack: ["TypeScript", "React", "Python", "PostgreSQL", "Pinecone", "AWS"]
   },

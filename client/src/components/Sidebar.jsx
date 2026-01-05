@@ -1,6 +1,113 @@
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
 import './Sidebar.css'
+
+function CuteMascot() {
+  const [eyePosition, setEyePosition] = useState({ x: 0, y: 0 })
+  const [isGreeting, setIsGreeting] = useState(true)
+  const mascotRef = useRef(null)
+
+  const shapes = [
+    { id: 1, color: 'sky', width: 32, height: 80, delay: 0, rounded: '8px 8px 4px 4px', zIndex: 2, eyePos: 'high' },
+    { id: 2, color: 'coral', width: 44, height: 44, delay: 0.08, rounded: '50%', zIndex: 4, eyePos: 'center' },
+    { id: 3, color: 'lavender', width: 30, height: 65, delay: 0.12, rounded: '6px 6px 4px 4px', zIndex: 3, eyePos: 'high' },
+    { id: 4, color: 'cream', width: 36, height: 38, delay: 0.16, rounded: '50% 50% 45% 45%', zIndex: 3, eyePos: 'center' },
+  ]
+
+  useEffect(() => {
+    const greetTimer = setTimeout(() => setIsGreeting(false), 2500)
+    
+    const handleMouseMove = (e) => {
+      if (!mascotRef.current) return
+      
+      const rect = mascotRef.current.getBoundingClientRect()
+      const mascotCenterX = rect.left + rect.width / 2
+      const mascotCenterY = rect.top + rect.height / 2
+      
+      const deltaX = e.clientX - mascotCenterX
+      const deltaY = e.clientY - mascotCenterY
+      
+      // Limit eye movement
+      const maxMove = 3
+      const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY)
+      const normalizedX = distance > 0 ? (deltaX / distance) * Math.min(distance / 50, 1) * maxMove : 0
+      const normalizedY = distance > 0 ? (deltaY / distance) * Math.min(distance / 50, 1) * maxMove : 0
+      
+      setEyePosition({ x: normalizedX, y: normalizedY })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      clearTimeout(greetTimer)
+    }
+  }, [])
+
+  return (
+    <div className="cute-mascot rect-mascot" ref={mascotRef}>
+      <motion.div 
+        className="mascot-speech"
+        initial={{ opacity: 0, scale: 0, y: 10 }}
+        animate={{ opacity: isGreeting ? 1 : 0, scale: isGreeting ? 1 : 0, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        Hi! 👋
+      </motion.div>
+      
+      <div className="rect-shapes-container">
+        {shapes.map((shape) => (
+          <motion.div
+            key={shape.id}
+            className={`rect-shape rect-shape--${shape.color}`}
+            style={{
+              width: shape.width,
+              height: shape.height,
+              borderRadius: shape.rounded,
+              zIndex: shape.zIndex,
+            }}
+            initial={{ opacity: 0, y: 20, scale: 0.5 }}
+            animate={{ 
+              opacity: 1, 
+              y: 0, 
+              scale: 1,
+            }}
+            transition={{ 
+              delay: shape.delay, 
+              duration: 0.4,
+              type: "spring",
+              stiffness: 200
+            }}
+            whileHover={{ 
+              scale: 1.05, 
+              y: -3,
+              transition: { duration: 0.15 }
+            }}
+          >
+            <div className={`rect-eyes rect-eyes--${shape.eyePos}`}>
+              <div className="rect-eye">
+                <div 
+                  className="rect-pupil"
+                  style={{ 
+                    transform: `translate(${eyePosition.x}px, ${eyePosition.y}px)` 
+                  }}
+                />
+              </div>
+              <div className="rect-eye">
+                <div 
+                  className="rect-pupil"
+                  style={{ 
+                    transform: `translate(${eyePosition.x}px, ${eyePosition.y}px)` 
+                  }}
+                />
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 const navItems = [
   { 
@@ -89,21 +196,24 @@ function Sidebar({ isOpen, onClose, onHide, theme, toggleTheme }) {
         </nav>
 
         <div className="sidebar-footer">
-          <a 
-            href="/resume/mtm_resume.pdf" 
-            download="Mehreen_Tabassum_Maliha_Resume.pdf"
-            className="download-resume-btn"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Download Resume
-          </a>
-          <button className="theme-btn" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
-            {theme === 'dark' ? '☀️' : '🌙'}
-          </button>
+          <CuteMascot />
+          <div className="sidebar-footer-buttons">
+            <a 
+              href="/resume/mtm_resume.pdf" 
+              download="Mehreen_Tabassum_Maliha_Resume.pdf"
+              className="download-resume-btn"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Resume
+            </a>
+            <button className="theme-btn" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
+          </div>
         </div>
       </aside>
     </>
