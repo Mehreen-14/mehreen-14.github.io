@@ -7,7 +7,7 @@ const projects = [
     desc: "Built a full-stack expense tracking app with Angular and Spring Boot, featuring voice-to-form smart input, SSLCommerz payment integration, and spending analytics.",
     tech: ["Angular", "Spring Boot", "PostgreSQL", "SSLCommerz"],
     github: "https://github.com/Mehreen-14/Expense-Tracker",
-    color: "indigo"
+    color: "sky"
   },
   {
     name: "Bhromor-Chatbot",
