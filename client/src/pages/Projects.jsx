@@ -3,6 +3,13 @@ import './PageStyles.css'
 
 const projects = [
   {
+    name: "Expense Tracker",
+    desc: "Built a full-stack expense tracking app with Angular and Spring Boot, featuring voice-to-form smart input, SSLCommerz payment integration, and spending analytics.",
+    tech: ["Angular", "Spring Boot", "PostgreSQL", "SSLCommerz"],
+    github: "https://github.com/Mehreen-14/Expense-Tracker",
+    color: "indigo"
+  },
+  {
     name: "Bhromor-Chatbot",
     desc: "Built an AI-powered chatbot using React, Node.js, and OpenRouter API to deliver contextual responses via large language models.",
     tech: ["React.js", "Node.js", "OpenRouter API", "MongoDB"],
