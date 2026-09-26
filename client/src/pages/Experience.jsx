@@ -7,7 +7,7 @@ const experienceData = [
     companyUrl: "https://www.oplusdojo.com/",
     role: "Software Engineer",
     project: "AI-powered social services case management platform",
-    period: "October 2025 – Present",
+    period: "October 2025 – February 2026",
     color: "coral",
     icon: "code",
     highlights: [
