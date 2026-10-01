@@ -6,12 +6,14 @@ const experienceData = [
     company: "OPlusDojo",
     companyUrl: "https://www.oplusdojo.com/",
     role: "Software Engineer",
-    project: "AI-powered social services case management platform",
+    project: "EloraHQ",
     period: "October 2025 – February 2026",
     color: "coral",
     icon: "code",
     highlights: [
-      "Built a multi-tenant web application for social services"
+      "Worked on LLM-powered real-time assistance platform for social-care providers",
+      "Contributed to voice-to-text transcription using AWS Transcribe, sentiment analysis and vector similarity search using Pinecone",
+      "Fixed bugs, optimized performance, and improved user experience based on feedback from social-care providers"
     ],
     techStack: ["TypeScript", "React", "Python", "PostgreSQL", "Pinecone", "AWS"]
   },
