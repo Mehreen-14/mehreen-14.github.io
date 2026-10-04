@@ -7,7 +7,7 @@ const experienceData = [
     companyUrl: "https://www.oplusdojo.com/",
     role: "Software Engineer",
     project: "EloraHQ",
-    period: "October 2025 – February 2026",
+    period: "October 2025 – Present",
     color: "coral",
     icon: "code",
     highlights: [
