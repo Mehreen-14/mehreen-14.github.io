@@ -33,28 +33,45 @@ const educationData = [
 
 const skillsData = [
   {
-    category: "Programming Languages",
-    icon: "code",
+    category: "Languages",
     color: "coral",
-    skills: ["C/C++", "C#", "Java", "Python", "JavaScript", "SQL"]
+    icon: "code",
+    skills: ["C", "C++", "C#", "Java", "JavaScript", "Python", "Dart", "CSS3", "LaTeX", "Markdown"]
   },
   {
-    category: "Frameworks & Technologies",
-    icon: "layers",
+    category: "Frameworks & Libraries",
     color: "sky",
-    skills: ["React", "Next.js", "Node.js", "Angular", ".NET", "Flutter", "MongoDB", "MySQL", "Oracle", "HTML/CSS", "Bootstrap", "Hugo"]
+    icon: "layers",
+    skills: [
+      "React", "React Native", "React Query", "React Router", "React Hook Form",
+      "Next.js", "Node.js", "Express.js", "Angular", "AngularJS", ".NET",
+      "Django", "FastAPI", "Spring", "Flutter", "JavaFX",
+      "Bootstrap", "Tailwind CSS", "JWT"
+    ]
   },
   {
-    category: "DevOps & Cloud",
-    icon: "cloud",
-    color: "cream",
-    skills: ["AWS", "Docker", "Kubernetes", "Git"]
-  },
-  {
-    category: "Tools & Software",
-    icon: "tool",
+    category: "Cloud & Databases",
     color: "lavender",
-    skills: ["VS Code", "IntelliJ IDEA", "Adobe Illustrator", "Photoshop", "Navicat", "JavaFX"]
+    icon: "cloud",
+    skills: ["AWS", "Firebase", "Vercel", "Oracle", "MongoDB", "MySQL", "PostgreSQL"]
+  },
+  {
+    category: "AI, ML & Data",
+    color: "cream",
+    icon: "layers",
+    skills: [
+      "PyTorch", "TensorFlow", "Keras", "scikit-learn", "OpenCV", "OpenGL",
+      "NumPy", "Pandas", "Matplotlib", "Plotly"
+    ]
+  },
+  {
+    category: "Tools & DevOps",
+    color: "coral",
+    icon: "tool",
+    skills: [
+      "Git", "GitHub", "GitLab", "GitHub Actions", "Docker", "Kubernetes",
+      "Jira", "Sentry", "Cisco", "Figma", "Canva", "Adobe Illustrator", "Adobe Photoshop"
+    ]
   }
 ]
 
@@ -84,7 +101,7 @@ function Education() {
           <p>Academic background and technical expertise</p>
         </motion.header>
 
-        <motion.section className="section about-section" variants={itemVariants}>
+        {/* <motion.section className="section about-section" variants={itemVariants}>
           <h2 className="section-title">About Me</h2>
           <div className="about-card">
             <p className="about-text">
@@ -99,7 +116,7 @@ function Education() {
               looking for the next challenge to grow.
             </p>
           </div>
-        </motion.section>
+        </motion.section> */}
 
         <motion.section className="section" variants={itemVariants}>
           <h2 className="section-title">Education</h2>
@@ -237,6 +254,9 @@ function Education() {
               </div>
             </a>
           </div>
+
+          
+
         </motion.section>
       </motion.div>
     </motion.div>

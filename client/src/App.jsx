@@ -9,6 +9,7 @@ import Research from './pages/Research'
 import Contact from './pages/Contact'
 import Resume from './pages/Resume'
 import Leadership from './pages/Leadership'
+import News from './pages/News'
 import './App.css'
 
 function AppContent() {
@@ -108,6 +109,7 @@ function AppContent() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/leadership" element={<Leadership />} />
+          <Route path="/news" element={<News />} />
         </Routes>
       </main>
     </div>
