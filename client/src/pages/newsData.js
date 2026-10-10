@@ -23,7 +23,7 @@ export const newsData = [
   {
     date: "2025-05-22",
     label: "May 22, 2025",
-    title: "Started M.Sc. at BUET",
+    title: "Started M.Sc. in Computer Science & Engineering at BUET",
     description: "Began M.Sc. in Computer Science & Engineering at Bangladesh University of Engineering and Technology (BUET).",
     type: "Education",
     color: "cream",
@@ -33,7 +33,7 @@ export const newsData = [
   {
     date: "2025-03-20",
     label: "Mar 20, 2025",
-    title: "Graduated from BUET",
+    title: "Completed B.Sc. in Computer Science and Engineering at BUET",
     description: "Completed B.Sc. in Computer Science and Engineering at Bangladesh University of Engineering and Technology.",
     type: "Education",
     color: "lavender",

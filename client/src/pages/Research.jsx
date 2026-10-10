@@ -10,6 +10,12 @@ const researchData = [
   //   color: "lavender"
   // }
 ]
+const researchInterests = [
+  "Machine Learning",
+  "Software Engineering",
+  "Wireless Networks",
+  "Large Language Models (LLMs)"
+]
 
 const publicationsData = [
   {
@@ -49,6 +55,22 @@ function Research() {
           <h1>Research</h1>
           <p>Academic research and publications</p>
         </motion.header>
+        
+{researchInterests.length > 0 && (
+  <motion.section className="section" variants={itemVariants}>
+    <h2 className="section-title">Research Interests</h2>
+    <ul className="research-interests">
+      {researchInterests.map((interest, index) => (
+        <li
+          key={index}
+          className={`research-interest interest-color-${index % 4}`}
+        >
+          {interest}
+        </li>
+      ))}
+    </ul>
+  </motion.section>
+)}
 
         {researchData.length > 0 && (
           <motion.section className="section" variants={itemVariants}>

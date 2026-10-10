@@ -1606,6 +1606,74 @@
   }
 }
 
+
+.research-interests {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  align-items: stretch;
+}
+
+.research-interest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1.5px solid;
+  cursor: default;
+  text-align: center;
+  min-height: 56px;
+}
+
+/* Cream */
+.interest-color-0 {
+  background: linear-gradient(135deg, #FFF1D6 0%, #FEF7E8 100%);
+  color: #76552D;
+  border-color: #F0DDB8;
+}
+
+/* Sky blue */
+.interest-color-1 {
+  background: linear-gradient(135deg, #DDF3FF 0%, #EEFAFF 100%);
+  color: #245D7A;
+  border-color: #B9E3F7;
+}
+
+/* Lavender */
+.interest-color-2 {
+  background: linear-gradient(135deg, #EDE3FF 0%, #F5F0FF 100%);
+  color: #63468B;
+  border-color: #D8C6F7;
+}
+
+/* Coral */
+.interest-color-3 {
+  background: linear-gradient(135deg, #FFE1DA 0%, #FFF0EB 100%);
+  color: #914B40;
+  border-color: #F7C4B9;
+}
+
+@media (max-width: 640px) {
+  .research-interests {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .research-interest {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    min-height: 50px;
+    border-radius: 10px;
+  }
+}
+
+
 /* ========================================
    RESUME PAGE
    ======================================== */

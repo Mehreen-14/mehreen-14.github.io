@@ -46,7 +46,6 @@ function News() {
                   </td>
                   <td className="news-table-info">
                     <span className="news-table-title">{item.title}</span>
-                    <span className="news-table-desc">{item.description}</span>
                     {/* <Link to={item.link} className="news-table-link">Learn more</Link> */}
                   </td>
                 </tr>
