@@ -41,9 +41,9 @@ export const newsData = [
     link: "/education"
   },
   {
-    date: "2024-11-19",
-    label: "Nov 19, 2024",
-    title: "Research paper published at NSysS 2025",
+    date: "2025-01-03",
+    label: "Jan 3, 2025",
+    title: "Research paper published at NSysS 2024",
     description: "Our WiFi RSS based automated attendance system paper appeared in the Proceedings of the 11th International Conference on Networking, Systems, and Security.",
     type: "Research",
     color: "cream",
