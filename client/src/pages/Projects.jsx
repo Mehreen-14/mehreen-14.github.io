@@ -38,6 +38,27 @@ const projects = [
     color: "cream"
   },
   {
+    name: "Networks Sessional",
+    desc: "Implemented the core networking concepts of socket programming, multi-client communication, and file transfer using Java-based client/server systems. It also included ns-3 simulation of network behavior under different traffic and mobility conditions, along with error detection and correction techniques like CRC and Hamming code.",
+    tech:["Cisco","Java","NS3"],
+    github:"https://github.com/Mehreen-14/Networking-Sessional",
+    color: "coral"
+  },
+  {
+    name: "Computer Graphics",
+    desc: "Consists of fundamental concepts in 3D rendering and visualization. Offline 1 focuses on camera control, enabling users to navigate a 3D space, manipulate a rolling ball, and interact with a magic cube. Offline 2 delves into rasterization, rendering 3D objects onto a 2D plane by transforming, projecting, and coloring pixels. Offline 3 introduces ray tracing, simulating realistic light behavior by tracing rays to create shadows, reflections, and refractions for highly detailed scenes",
+    tech: ["Graphics","OpenGL"],
+    github: "https://github.com/Mehreen-14/CSE410-Computer-Graphics-Sessional",
+    color: "lavender"
+  },
+  {
+    name: "C Compiler",
+    desc: "Developed a mini-compiler for a subset of a C-like language, implementing the key stages of compilation, including lexical analysis, syntax parsing, symbol table management, scope handling, and code generation. Built a Flex-based lexer and a Yacc/Bison parser to process declarations, expressions, and control-flow constructs such as `if-else` and `while`. Implemented a scope-aware symbol table to manage variable and function declarations, along with an assembly-style code generator to translate source code into instructions, demonstrating an end-to-end compilation pipeline.",
+    tech: ["Flex","Bison","YACC","C++"],
+    github: "https://github.com/Mehreen-14/Compiler-Sessional",
+    color: "sky"
+  },
+  {
     name: "FoodnPleasure",
     desc: "Developed a restaurant management system supporting four restaurants with online orders, reservations, and integrated special offers.",
     tech: ["HTML/CSS", "Bootstrap", "Oracle", "NodeJS"],
